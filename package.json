@@ -18,12 +18,20 @@
   "homepage": "https://github.com/rk23/prioritize-travel#readme",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.1",
     "cron": "^1.1.0",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "http": "0.0.0",
     "lodash": "^4.1.0",
+    "method-override": "^2.3.5",
     "mongoose": "^4.3.7",
     "nodemailer": "^2.0.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
     "path": "^0.12.7",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "session": "^0.1.0"
   }
 }
