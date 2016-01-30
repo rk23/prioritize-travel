@@ -1,3 +1,7 @@
-/**
- * Created by ReedK on 1/29/16.
- */
+var express = require('express');
+var router = express.Router();
+  router.get('/', function(req, res){
+    res.send('HI');
+  });
+
+module.exports = router;

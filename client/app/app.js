@@ -1,7 +1,4 @@
-/**
- * Created by ReedK on 1/29/16.
- */
-var app = angular.module('HackathonApp', ['ngRoute', 'HackathonCtrls']);
+var app = angular.module('PrioritizeTravel', ['ngRoute', 'HackathonCtrls']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
