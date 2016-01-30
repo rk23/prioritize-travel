@@ -2,13 +2,15 @@
  * Created by ReedK on 1/29/16.
  */
 angular.module('HackathonCtrls', [])
-  .controller('HomeCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+  .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
+    $rootScope.bgimg = "home_body";
+    $scope.weekly = 0;
+
     $rootScope.isLoggedIn = false;
 
     $scope.logout = function() {
       $http.get('/auth/logout').then(
         function success(res){
-          console.log('logged out')
           $rootScope.loggedIn = false;
           $location.path('/')
         },
@@ -80,4 +82,3 @@ angular.module('HackathonCtrls', [])
 
     }
   }]);
-
