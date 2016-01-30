@@ -1,10 +1,11 @@
-var express         = require('express');
-var mongoose        = require('mongoose');
-var request         = require('request');
-var _               = require('lodash');
-var path            = require('path');
+var express     = require('express'),
+    mongoose    = require('mongoose'),
+    request     = require('request'),
+    path        = require('path'),
+    bodyParser  = require('body-parser'),
+    _           = require('lodash'),
 
-var app = express();
+  app         = express();
 
 
 mongoose.connect('mongodb://localhost:27017/prioritize-travel' || process.env.MONGOLAB_URI);
