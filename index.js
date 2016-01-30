@@ -7,7 +7,7 @@ var path            = require('path');
 var app = express();
 
 
-mongoose.connect('mongodb://localhost/prioritize-travel');
+mongoose.connect('mongodb://localhost:27017/prioritize-travel' || process.env.MONGOLAB_URI);
 mongoose.connection.once('open', function(){
 
   //Load DB models
