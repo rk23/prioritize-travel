@@ -3,6 +3,9 @@
  */
 angular.module('HackathonCtrls', [])
   .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
+    $rootScope.bgimg = "home_body";
+    $scope.weekly = 0;
+
     $rootScope.isLoggedIn = false;
 
     $scope.logout = function() {
@@ -107,5 +110,3 @@ angular.module('HackathonCtrls', [])
 
     }
   }]);
-
-
