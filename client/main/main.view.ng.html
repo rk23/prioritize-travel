@@ -1,4 +1,4 @@
-<div class="main container">
+<div class="main container" ng-show="ifLoggedIn">
   <h1>Things</h1>
   <form ng-submit="save()" name="form" novalidate="" class="thing-form">
     <p class="input-group">
@@ -18,4 +18,5 @@
     </div>
   </div>
   <p>Total number of things: {{thingsCount}}</p>
+
 </div>

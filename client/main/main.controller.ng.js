@@ -7,6 +7,9 @@ angular.module('prioritizeTravelApp')
   $scope.helpers({
     things: function() {
       return Things.find({});
+    },
+    ifLoggedIn: function() {
+      return Accounts.user();
     }
   });
                   
