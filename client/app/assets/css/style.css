@@ -11,7 +11,8 @@
     margin: 0.5rem;
 }
 body {
-	background: url("../img/bg.jpg") no-repeat center center fixed; 
+	/*background: url("../img/bg.jpg") no-repeat center center fixed; */
+	background: url("http://www.letstravelsomewhere.com/wp-content/uploads/2013/05/lets-travel-to-bolivia-with-tony-harrison-10.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -35,4 +36,10 @@ input, label {
 
 .inline {
 	display: inline-block;
+}
+
+.signup {
+	background-color: rgba(255,255,255,.8);
+	padding: 30px;
+	border-radius: 5px;
 }
