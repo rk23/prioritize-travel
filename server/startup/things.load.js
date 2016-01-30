@@ -7,7 +7,8 @@ Meteor.startup(function() {
       'Latency Compensation',
       'Full Stack Reactivity',
       'Embrace the Ecosystem',
-      'Simplicity Equals Productivity'
+      'Simplicity Equals Productivity',
+      'Blake Allan'
     ];
     things.forEach(function(thing) {
       Things.insert({
