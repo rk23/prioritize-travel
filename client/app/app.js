@@ -9,6 +9,18 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
       }
     )
     .when(
+      '/signup', {
+        templateUrl: 'app/views/signup.html',
+        controller: 'SignupCtrl'
+      }
+    )
+    .when(
+      '/login', {
+        templateUrl: 'app/views/login.html',
+        controller: 'LoginCtrl'
+      }
+    )
+    .when(
       '/profile', {
         templateUrl: 'app/views/profile.html',
         controller: 'HomeCtrl'

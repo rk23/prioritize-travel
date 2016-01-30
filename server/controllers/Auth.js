@@ -5,6 +5,7 @@ var router = express.Router();
 
 
 router.post('/register', function(req, res) {
+  console.log(req.body)
   User.register(new User({
     email : req.body.email,
     username : req.body.username,
@@ -12,11 +13,11 @@ router.post('/register', function(req, res) {
     firstName : req.body.firstName,
     lastName : req.body.lastName}),
     req.body.password, function(err, user) {
-
-    passport.authenticate('local')(req, res, function () {
-      res.send('USER REGISTERED');
+      if(err) console.log(err);
+      passport.authenticate('local')(req, res, function () {
+        res.send('USER REGISTERED');
+      });
     });
-  });
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
@@ -25,6 +26,7 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
 
 router.get('/logout', function(req, res) {
   req.logout();
+  console.log('logged out in server')
   res.redirect('/');
 });
 
