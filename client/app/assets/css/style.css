@@ -26,10 +26,14 @@ input, label {
 	display: inline-block;
 }
 
-.signup {
-	background-color: rgba(255,255,255,.8);
+.formBackground {
+	background-color: rgba(0,0,0,.6);
 	padding: 30px;
 	border-radius: 5px;
+}
+
+.formBackground legend {
+    color: white;
 }
 
 .block {
