@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <!--Bootstrap CSS CDN-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
         integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></head>
+
+  <!--Angular CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
+
+  <!--Local Script Files-->
+  <script src="app/app.js"></script>
+  <script src="app/controllers.js"></script>
+  <script src="app/services.js"></script>
+
 <body ng-app="PrioritizeTravel">
-<p>Working</p>
-<ng-view></ng-view>
+  <ng-view></ng-view>
 </body>
 </html>

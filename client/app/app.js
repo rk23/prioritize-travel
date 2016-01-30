@@ -4,7 +4,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $routeProvider
     .when(
       '/', {
-        templateUrl: 'app/views/random.html',
+        templateUrl: 'app/views/home.html',
         controller: 'HomeCtrl'
       }
     );
