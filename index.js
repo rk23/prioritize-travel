@@ -2,11 +2,12 @@ var express         = require('express');
 var mongoose        = require('mongoose');
 var request         = require('request');
 var _               = require('lodash');
+var path            = require('path');
 
 var app = express();
 
 
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect('mongodb://localhost:27017/prioritize-travel' || process.env.MONGOLAB_URI);
 mongoose.connection.once('open', function(){
 
   //Load DB models
