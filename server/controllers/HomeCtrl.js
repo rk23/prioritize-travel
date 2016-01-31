@@ -14,7 +14,7 @@ router.post('/average', function (req, res) {
   var origin = req.body.origin;
   var destination = req.body.destination;
 
-  helper.averagePriceUnreal('SEA', 'LAS', function(average){
+  helper.averagePriceUnreal(origin, destination, function(average){
     console.log(average);
     res.send(average);
   });
