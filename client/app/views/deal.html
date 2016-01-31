@@ -2,20 +2,20 @@
 	<div class="col-xs-2 col-md-3"></div>
 		<div class="text-center col-xs-8 col-md-6">
 			<div class="lg_text">
-				<span class="color2">SEA</span> &rarr; <span class="color3">LAX</span>
+				<span class="color2" ng-model="to">{{to}}</span> &rarr; <span class="color3" ng-model="from">{{from}}</span>
 				<p class="md_text">at</p>
 				<div class="imgContainer imgContainer1">
 					$<span>{{savedPerWeek}}</span><span class="md_text">/wk</span>
 					<h4>you will need</h4>
 				</div>
-				<div class="imgContainer imgContainer2">
-					<span>{{ monthsNeeded(savedPerWeek, price) }}</span><span class="md_text">months</span>
+				<div class="imgContainer2">
+					<span>{{ monthsNeeded() }}</span><span class="md_text">months</span>
 					<h4>to save</h4>
 				</div>
 				<div class="imgContainer imgContainer3">
 					$<span>{{price}}</span>
 				</div>
-				
+
 				<p class="md_text">See where else you can go with your savings</p>
 				<div class="row spacer"><a href="#/deal" class="btn btn_default">Let's Go!</a></div>
 			</div>

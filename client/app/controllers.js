@@ -2,11 +2,11 @@
  * Created by ReedK on 1/29/16.
  */
 angular.module('HackathonCtrls', ['HackathonServices'])
-  .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
+  .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', '$routeParams', function($scope, $rootScope, $location, $http, $routeParams) {
     $rootScope.bgimg = "home_body";
-    $scope.weekly = 0;
-    $scope.income = 0;
-    $scope.percentage = 0;
+    $rootScope.weekly;
+    $scope.income;
+    $scope.percentage;
 
     $rootScope.isLoggedIn = false;
 
@@ -21,6 +21,24 @@ angular.module('HackathonCtrls', ['HackathonServices'])
         }
       )
     }
+
+    $rootScope.airport = {};
+
+    $scope.search = function(airport, amount) {
+      console.log(airport);
+      $http({
+        method: 'POST',
+        url: 'http://localhost:3000/api/average',
+        data: airport,
+      }).success(function(data){
+        console.log(data);
+        $rootScope.weekly = amount;;
+        $rootScope.average = data.average;
+        $location.path("/deal");
+      }).error(function(data){
+        console.log(data);
+      });
+    };
 
   }])
   .controller('SignupCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
@@ -98,16 +116,23 @@ angular.module('HackathonCtrls', ['HackathonServices'])
     )
   }])
   .controller('DealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
-    $rootScope.bgimg = "user_body";
-    $scope.savedPerWeek = 40;
-    $scope.price = 2800;
+    $scope.to = $scope.airport.origin;
+    $scope.from = $scope.airport.destination;
+    $rootScope.bgimg = "deal_body";
+    $scope.savedPerWeek = $scope.weekly;
+    $scope.price = Math.floor($scope.average);
 
-    console.log("moo");
+    $scope.monthsNeeded = function(savedPerWeek, price){
+      var saved = $scope.savedPerWeek;
+      var price = $scope.price;
+      var time = price / saved;
 
-
-    var monthsNeeded = function(savedPerWeek, price){
-      console.log("moo2");
-      return price/savedPerWeek;
+      if (time < 4) {
+        return Math.floor(time);
+      } else {
+        var months = time / 4;
+        return Math.floor(months);
+      }
     };
 
 

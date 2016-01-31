@@ -1,5 +1,5 @@
 .home_body {
-  background-image: url('../img/homepage_cropped.jpg');
+  background-image: url('../img/homepage_cropped1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -9,6 +9,15 @@
 
 .user_body {
   background-image: url('../img/bg_profile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.deal_body {
+  background-image: url('../img/deals_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -183,12 +192,12 @@ li{
 
 .imgContainer1 {
 	background-image: url("../img/cloud.png");
-	
+
 }
 
 .imgContainer2 {
 	background-image: url("../img/banner.png");
-	
+
 }
 
 .imgContainer3 {
