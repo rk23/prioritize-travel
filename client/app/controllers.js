@@ -5,6 +5,8 @@ angular.module('HackathonCtrls', [])
   .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
     $rootScope.bgimg = "home_body";
     $scope.weekly = 0;
+    $scope.income = 0;
+    $scope.percentage = 0;
 
     $rootScope.isLoggedIn = false;
 
@@ -83,6 +85,7 @@ angular.module('HackathonCtrls', [])
     }
   }])
   .controller('UserCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $rootScope.bgimg = "user_body";
     $scope.user = {
       email: '',
       password: ''

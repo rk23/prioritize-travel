@@ -23,7 +23,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when(
       '/profile', {
         templateUrl: 'app/views/profile.html',
-        controller: 'HomeCtrl'
+        controller: 'UserCtrl'
       }
     )
     .when(
