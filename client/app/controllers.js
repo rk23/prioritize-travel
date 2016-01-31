@@ -1,10 +1,12 @@
 /**
  * Created by ReedK on 1/29/16.
  */
-angular.module('HackathonCtrls', [])
+angular.module('HackathonCtrls', ['HackathonServices'])
   .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
     $rootScope.bgimg = "home_body";
     $scope.weekly = 0;
+    $scope.income = 0;
+    $scope.percentage = 0;
 
     $rootScope.isLoggedIn = false;
 
@@ -74,6 +76,7 @@ angular.module('HackathonCtrls', [])
         data: $scope.user
       }).success(function (res) {
         $rootScope.loggedIn = true;
+        $rootScope.username = $scope.user.username;
         $location.path('/')
       }).error(function(res) {
         console.log(res);
@@ -81,6 +84,16 @@ angular.module('HackathonCtrls', [])
 
     }
   }])
-  .controller('UserCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
+  .controller('UserCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $rootScope.bgimg = "user_body";
 
+    $http.get('/auth/currentUser').then(
+      function success(res){
+        $scope.user = res.data;
+        console.log(res.data)
+      },
+      function error(){
+        console.log('userctrl error')
+      }
+    )
   }]);
