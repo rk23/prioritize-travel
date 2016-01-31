@@ -26,11 +26,11 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'UserCtrl'
       }
     )
-    .when(
-    '/deal', {
-      templateUrl: 'app/views/deal.html',
-      controller: 'HomeCtrl'
+      .when(
+      '/deal', {
+        templateUrl: 'app/views/deal.html',
+        controller: 'DealCtrl'
       }
     );
-  //$locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 }]);

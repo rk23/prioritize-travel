@@ -2,7 +2,7 @@
  * Created by ReedK on 1/29/16.
  */
 angular.module('HackathonCtrls', ['HackathonServices'])
-  .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
+  .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', '$routeParams', function($scope, $rootScope, $location, $http, $routeParams) {
     $rootScope.bgimg = "home_body";
     $scope.weekly = 0;
     $scope.income = 0;
@@ -21,6 +21,26 @@ angular.module('HackathonCtrls', ['HackathonServices'])
         }
       )
     }
+
+    $scope.origin = '';
+    $scope.destination = '';
+
+    $scope.master = {
+      origin: "LAX",
+      destination: "SEA"
+    };
+
+    $scope.search = function(destination) {
+      $http({
+        method: 'POST',
+        url: 'http://localhost3000/api/average',
+        data: $scope.master,
+      }).success(function(data){
+        console.log(data);
+      }).error(function(data){
+        console.log(data);
+      });
+    };
 
   }])
   .controller('SignupCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
@@ -96,4 +116,24 @@ angular.module('HackathonCtrls', ['HackathonServices'])
         console.log('userctrl error')
       }
     )
+  }])
+  .controller('DealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $rootScope.bgimg = "deal_body";
+    $scope.savedPerWeek = 40;
+    $scope.price = 2800;
+
+    $scope.monthsNeeded = function(savedPerWeek, price){
+      var saved = $scope.savedPerWeek;
+      var price = $scope.price;
+      var time = price / saved;
+
+      if (time < 4) {
+        return Math.floor(time);
+      } else {
+        var months = time / 4;
+        return Math.floor(months);
+      }
+    };
+
+
   }]);

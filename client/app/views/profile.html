@@ -1,23 +1,24 @@
 <div class="container text-center" id="profile">
 	<div class="row">
     <h3>Your Account</h3>
-		<div class="spacer text-left col-md-6 col-xs-6">
-			<p class="subtitle underline color1">Favorites</p>
-			<p>Berlin</p>
-			<p>Kuala Lumpur</p>
-			<p>Taipei</p>
-			<p>Honolulu</p>
+		<div class="text-left col-md-6 col-xs-6">
+      <p class="subtitle spacer color4">How much did you save today?</p>
+      Add money not spent today: <input type="text" placeholder="Amount" class="form-control"><p class="spacer"><a
+        href="#/profile" class="btn btn-sm btn_default">Add to savings</a></p>
+
+      <p class="subtitle spacer color1">Recurring Savings</p>
+      Add recurring transfer: <input type="text" placeholder="Amount" class="form-control"><p class="spacer"><a
+        href="#/" class="btn btn-sm btn_default">Add to savings</a></p>
 		</div>
 		<div class="col-md-6 col-xs-6">
 			<p class="subtitle spacer color2">Total Savings</p>
-			<p class="lg_text">$1200</p>
-			<p class="subtitle spacer color3">Weekly Savings</p>
-			<p><span class="lg_text">$40</span>/wk</p>
+			<p class="lg_text" ng-model="user.bank.totalSavings">${{user.bank.totalSavings}}.00</p>
+			<p class="subtitle spacer color3">This Week's Savings</p>
+			<p><span class="lg_text" ng-model="user.bank.pendingDeposit">${{user.bank.pendingDeposit}}</span>/wk</p>
 		</div>
 		<div>
-			<p class="subtitle spacer color4">How much did you save today?</p>
-			<input type="text" placeholder="Amount" class="form-control"><p class="spacer"><a href="#/profile" class="btn btn-sm btn_default">Add to savings</a></p>
+
 		</div>
 	</div>
-	<div class="row spacer"><a href="#/profile" class="btn btn_default">Logout</a></div>
+	<!--<div class="row spacer"><a href="#/profile" class="btn btn_default">Logout</a></div>-->
 </div>

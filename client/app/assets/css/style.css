@@ -16,6 +16,15 @@
   -o-background-size: cover;
 }
 
+.deal_body {
+  background-image: url('../img/deals_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 .logo {
   height: 100px;
   margin-left: 25px;

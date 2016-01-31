@@ -10,7 +10,6 @@ var express     = require('express'),
     methodOverride = require('method-override'),
     cookieParser = require('cookie-parser'),
     session     = require('express-session'),
-    d3          = require('d3'),
 
     app         = express();
 
