@@ -9,7 +9,6 @@ module.exports = {
 
     request(uri, function (req, res) {
       var unrealDeals = JSON.parse(res.body).deals.packages;
-      console.log(unrealDeals);
       callback({unrealDeals: unrealDeals});
     });
   },
