@@ -105,15 +105,17 @@ angular.module('HackathonCtrls', ['HackathonServices'])
   .controller('UserCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
     $rootScope.bgimg = "user_body";
 
-    $http.get('/auth/currentUser').then(
-      function success(res){
-        $scope.user = res.data;
-        $scope.user.bank.savings = 0;
-      },
-      function error(){
-        console.log('userctrl error')
-      }
-    )
+      $http.get('/auth/currentUser').then(
+        function success(res) {
+            $scope.user = res.data;
+          if($scope.user) {
+            $scope.user.bank.savings = 0;
+          }
+        },
+        function error() {
+          console.log('userctrl error')
+        }
+      )
 
     $scope.updateDaily = function(savings, user){
       if (!savings) savings = 0;
