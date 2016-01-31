@@ -1,0 +1,40 @@
+<div class="row top-row">
+</div><!--row end -->
+<div class="row mid-row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="row">
+      <div class="col-xs-3 text-center">
+        <h4>Destination</h4>
+      </div><!-- col end -->
+      <div class="col-xs-3 text-center">
+        <h4>Cost</h4>
+      </div><!-- col end -->
+      <div class="col-xs-3 text-center">
+        <h4>Savings</h4>
+      </div><!-- col end -->
+      <div class="col-xs-3 text-right">
+        <h4>Time</h4>
+      </div><!-- col end -->
+  </div><!-- col end -->
+  <!-- items -->
+    <ul>
+      <li ng-repeat="item in popular" class="well">
+        <div class="row">
+          <div class="col-xs-3 pop-destination">
+            {{item.destinationTLA}}
+          </div>
+          <div class="col-xs-3 pop-cost">
+            {{item.totalPackagePrice | currency: $ : 0}}
+          </div>
+          <div class="col-xs-3 pop-weekly">
+            {{weekly}}
+          </div>
+          <div class="col-xs-3 text-right pop-time">
+            {{item.totalPackagePrice / weekly}}
+          </div>
+        </div>
+      </li>
+    </ul>
+</div><!-- row end -->
+<div class="row">
+</div><!-- row end -->

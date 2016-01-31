@@ -25,6 +25,24 @@
   -o-background-size: cover;
 }
 
+.popular_body {
+  background-image: url('../img/travel_photo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.unreal_body {
+  background-image: url('../img/weird_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 .logo {
   height: 100px;
   margin-left: 25px;
@@ -223,4 +241,31 @@ li{
 .imgContainer4 {
 	background-image: url("../img/bar-gradient.png");
 	height: 50px;
+}
+
+.mid-row {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pop-destination {
+  color: rgb(80, 170, 235);
+  font-size: 22px;
+}
+
+.pop-cost {
+  color: rgb(227, 130, 40);
+}
+
+.pop-weekly {
+  color: rgb(17, 172, 61);
+  font-size: 18px;
+}
+
+.pop-time {
+  color: rgb(92, 40, 79);
+  font-size: 18px;
+}
+
+.unreal-text {
+  color: rgb(7, 77, 96);
 }
