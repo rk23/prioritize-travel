@@ -18,4 +18,11 @@ router.post('/average', function (req, res) {
   });
 });
 
+router.post('/thing', function(req, res){
+  helper.topSpotsCost('SEA', function(data){
+    console.log(data);
+    res.send(data);
+  });
+});
+
 module.exports = router;
