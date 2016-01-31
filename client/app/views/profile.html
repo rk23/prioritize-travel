@@ -1,24 +1,32 @@
-<div class="container text-center" id="profile">
+<div class="container-fluid text-center" id="profile">
 	<div class="row lg_text">Username</div>
 	<div class="row md_text">email@prioritize.com</div>
 	<div class="row">
-		<div class="spacer text-left col-md-6 col-xs-6">
+		<div class="col-xs-1 col-md-2">
+		</div> <!-- closes spacer column -->
+		<div class="spacer text-left col-md-3 col-xs-3">
 			<p class="subtitle underline color1">Favorites</p>
 			<p>Berlin</p>
 			<p>Kuala Lumpur</p>
 			<p>Taipei</p>
 			<p>Honolulu</p>
 		</div>
-		<div class="col-md-6 col-xs-6">
+		<div class="col-xs-3 col-md-3">
+		</div> <!-- closes spacer column -->
+		<div class="col-md-3 col-xs-3">
 			<p class="subtitle spacer color2">Total Savings</p>
 			<p class="lg_text">$1200</p>
 			<p class="subtitle spacer color3">Weekly Savings</p>
 			<p><span class="lg_text">$40</span>/wk</p>
 		</div>
-		<div>
+		<div class="col-xs-1 col-md-2">
+		</div>
+	</div> <!-- closes row-->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
 			<p class="subtitle spacer color4">How much did you save today?</p>
 			<input type="text" placeholder="Amount" class="form-control"><p><a href="#/profile" class="btn btn-sm btn_default">Add to savings</a></p>
 		</div>
-	</div>
+	</div> <!-- closes row -->
 	<div class="row spacer"><a href="#/profile" class="btn btn_default">Logout</a></div>
 </div>
