@@ -4,7 +4,7 @@
 angular.module('HackathonCtrls', ['HackathonServices'])
   .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', '$routeParams', function($scope, $rootScope, $location, $http, $routeParams) {
     $rootScope.bgimg = "home_body";
-    $rootScope.weekly = 0;
+    $rootScope.weekly;
     $scope.income = 0;
     $scope.percentage = 0;
 
@@ -22,28 +22,29 @@ angular.module('HackathonCtrls', ['HackathonServices'])
       )
     }
 
-    $scope.origin = '';
-    $scope.destination = '';
+    $rootScope.airport = {
+      origin: '',
+      destination: ''
+    };
 
-    $scope.master = {};
-
-    $scope.search = function(destination) {
-      $scope.master = {
-        origin: $scope.origin,
-        destination: $scope.destination
+    $scope.search = function(weekly) {
+      $rootScope.airport = {
+        origin: $rootScope.airport.origin,
+        destination: $rootScope.airport.destination
       };
+      console.log(weekly);
       $http({
         method: 'POST',
         url: 'http://localhost:3000/api/average',
         data: $scope.master,
       }).success(function(data){
         console.log(data);
-        $rootScope.average = data.average
+        $rootScope.weekly = weekly;
+        $rootScope.average = data.average;
         $location.path("/deal");
       }).error(function(data){
         console.log(data);
       });
-      console.log($scope.master);
     };
 
   }])
@@ -122,9 +123,11 @@ angular.module('HackathonCtrls', ['HackathonServices'])
     )
   }])
   .controller('DealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $scope.to = $rootScope.airport.origin;
+    $scope.from = $rootScope.airport.destination;
     $rootScope.bgimg = "deal_body";
-    $scope.savedPerWeek = 40;
-    $scope.price = 2800;
+    $scope.savedPerWeek = $scope.weekly;
+    $scope.price = Math.floor($scope.average);
 
     $scope.monthsNeeded = function(savedPerWeek, price){
       var saved = $scope.savedPerWeek;
