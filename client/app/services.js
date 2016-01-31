@@ -1,3 +1,6 @@
-/**
- * Created by ReedK on 1/29/16.
- */
+angular.module('HackathonServices', ['ngResource'])
+  .factory('Auth', ['$http', function($http){
+    return {
+      currentUser: function(){return currentUser;}
+    }
+  }])

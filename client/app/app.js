@@ -1,4 +1,4 @@
-var app = angular.module('PrioritizeTravel', ['ngRoute', 'HackathonCtrls', 'ui.bootstrap']);
+var app = angular.module('PrioritizeTravel', ['ngRoute', 'HackathonCtrls', 'HackathonServices', 'ui.bootstrap']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
@@ -23,7 +23,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when(
       '/profile', {
         templateUrl: 'app/views/profile.html',
-        controller: 'HomeCtrl'
+        controller: 'UserCtrl'
       }
     )
     .when(
