@@ -1,30 +1,50 @@
 var nodemailer  = require('nodemailer'),
+    User        = require('../models/user'),
     CronJob     = require('cron').CronJob;
 
-var job = new CronJob('00 41 21 * * 6', function() {
+var job = new CronJob('15 * * * * *', function() {
     /*
      * Runs every Sunday at 9AM
      */
 
-// create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport('smtps://reed.kinning%40gmail.com:rkinning23@smtp.gmail.com');
+  User.find({}, function(err, users){
+    users.forEach(function(user){
+      //Increment total savings first
+      user.bank.totalSavings += user.bank.pendingDeposit;
+
+      // create reusable transporter object using the default SMTP transport
+      var transporter = nodemailer.createTransport('smtps://reed.kinning%40gmail.com:rkinning23@smtp.gmail.com');
 
 // setup e-mail data with unicode symbols
-    var mailOptions = {
-      from: 'Reed Kinning <reed.kinning@gmail.com>', // sender address
-      to: 'reed.kinning@gmail.com', // list of receivers
-      subject: 'Hello ✔', // Subject line
-      text: 'Hello world 🐴', // plaintext body
-      html: '<b>Hello world 🐴</b>' // html body
-    };
+      var mailOptions = {
+        from: 'Prioritize Travel <reed.kinning@gmail.com>', // sender address
+        to: user.email, // list of receivers
+        subject: 'Your Weekly Savings', // Subject line
+        text: '- ' + user.bank.pendingDeposit, // plaintext body
+        html: '<p>Hi ' + user.firstName + ', <br><br>Here\'s your weekly savings report from <b>Prioritize' +
+          ' Travel</b>.<h2>Savings this week: <span style="font-weight: 100">$' + user.bank.pendingDeposit + '.00</span><h2><h3>Total' +
+        ' Savings: <span style="font-weight: 100">$' + user.bank.totalSavings + '.00</span></h3><p>Be sure to deposit' +
+        ' this' +
+        ' right away! In X weeks you can afford to meet your goal</p><br><p>Your friends at <b>Prioritize Travel</b>, </p><p> Erin Moon, Jo Chong, Adriane Purdy, Blake Allen, and Reed Kinning</p>' // html body
+      };
 
 // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info){
-      if(error){
-        return console.log(error);
-      }
-      console.log('Message sent: ' + info.response);
-    });
+      transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+          return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+      });
+
+      user.bank.pendingDeposit = user.bank.totalRecurring;
+      user.save();
+
+    //  End for each
+    })
+  //  End user find
+  });
+
+
 
   }, function () {
     /* This function is executed when the job stops */

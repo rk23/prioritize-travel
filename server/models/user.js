@@ -11,7 +11,8 @@ var User = new Schema({
   bank: {
     totalSavings: Number,
     pendingDeposit: Number,
-    savingsGoal: Number
+    savingsGoal: Number,
+    totalRecurring: Number
   },
   created_at: Date,
   updated_at: Date

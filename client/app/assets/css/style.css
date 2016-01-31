@@ -294,3 +294,30 @@ li{
 .unreal-text {
   color: rgb(7, 77, 96);
 }
+
+.interior-well {
+	margin: 10px;
+	color: black;
+	font-size: 14px;
+}
+.interior-well p {
+	margin-bottom: 0px;
+}
+
+#daily-options {
+	height: 250px;
+	overflow: scroll;
+}
+
+#daily-options .btn {
+	padding: 2px 12px;
+	width: 75px;
+}
+
+#daily-options p {
+	padding: 2px 0;
+}
+
+#daily-options i {
+
+}
