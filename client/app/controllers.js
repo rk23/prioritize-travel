@@ -5,6 +5,8 @@ angular.module('HackathonCtrls', ['HackathonServices'])
   .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
     $rootScope.bgimg = "home_body";
     $scope.weekly = 0;
+    $scope.income = 0;
+    $scope.percentage = 0;
 
     $rootScope.isLoggedIn = false;
 
@@ -82,7 +84,9 @@ angular.module('HackathonCtrls', ['HackathonServices'])
 
     }
   }])
-  .controller('UserCtrl', ['$scope', '$rootScope', '$http', '$location', 'Auth', function($scope, $rootScope, $http, $location, Auth){
+  .controller('UserCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $rootScope.bgimg = "user_body";
+
     $http.get('/auth/currentUser').then(
       function success(res){
         $scope.user = res.data;
