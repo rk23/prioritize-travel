@@ -20,7 +20,7 @@ router.post('/average', function(req, res) {
 });
 
 router.post('/thing', function(req, res){
-  helper.topSpotsCost('SEA', function(data){
+  helper.topVacations('SEA', function(data){
     console.log(data);
     res.send(data);
   });

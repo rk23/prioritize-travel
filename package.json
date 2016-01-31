@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rk23/prioritize-travel#readme",
   "dependencies": {
+    "async": "^1.5.2",
     "body-parser": "^1.14.2",
     "cookie-parser": "^1.4.1",
     "cron": "^1.1.0",
