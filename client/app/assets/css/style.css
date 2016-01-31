@@ -1,38 +1,145 @@
+.home_body {
+  background-image: url('../img/homepage_cropped.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.logo {
+  height: 100px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+}
+
+.center-row {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+.quote {
+  color: rgb(91, 91, 91);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.tab-heading {
+  margin-bottom: 10px;
+}
+
+.pill-tabs {
+  margin: 0 125px;
+  display: inline-block;
+}
+
+.savings_per_year {
+  color: rgb(255, 255, 255);
+}
+
 .pagination {
   list-style-type: none;
   text-align: center;
   margin: 0;
   padding: 0;
 }
-  
+
 .pagination li {
     display: inline-block;
     padding: 0.5rem;
     margin: 0.5rem;
 }
+
 body {
-	background: url("../img/bg.jpg") no-repeat center center fixed; 
+	/*background: url("../img/bg.jpg") no-repeat center center fixed; */
+	background: url("http://www.letstravelsomewhere.com/wp-content/uploads/2013/05/lets-travel-to-bolivia-with-tony-harrison-10.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	color: #DEDEDE;
 }
 
-#searchBox {
-	width: 500px;
-	background-color: rgba(255, 255, 255, .5);
+.footer {
+  position: relative;
+  font-size: 9px;
+}
+
+.formBackground {
+	background-color: rgba(0,0,0,.6);
+	padding: 30px;
+	border-radius: 5px;
+}
+
+.formBackground legend {
+    color: white;
+}
+
+.block {
+	display: block;
+}
+
+li{
+	list-style: none;
+}
+
+.underline {
+	border-bottom: solid 2px #DEDEDE;
+	padding-bottom: 3px;
+	width: 100px;
+}
+
+.spacer {
+	padding-top: 30px;
+}
+
+.btn_default {
+	background-color: #6B0018;
+	border-radius: 8px;
+	color: white;
+	border: solid white 2px;
+}
+
+.btn_default:hover {
+	background-color: #E85C43;
+	color: white;
+}
+
+.btn_default:visited {
+	color: white;
+}
+
+.lg_text{
+	font-size: 30px;
+}
+
+.md_text {
+	font-size: 20px;
+}
+
+#profile .subtitle {
+	font-size: 20px;
+}
+
+.color1 {
+	color: #4EFF54;
+}
+.color2 {
+	color: #E8AF0C;
+}
+.color3 {
+	color: #3A98FF;
+}
+.color4 {
+	color: #E86443;
+}
+
+/*profile*/
+#profile {
+	width: 480px;
+	background-color: rgba(0, 0, 0, .7);
 	margin: 0 auto;
 	border-radius: 20px;
-	padding: 50px 0;
-
-}
-
-input, label {
-	text-align: center;
-    display:block;
-    margin: 10px;
-}
-
-.inline {
-	display: inline-block;
+	padding: 50px 50px;
 }
