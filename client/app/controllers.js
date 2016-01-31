@@ -22,21 +22,14 @@ angular.module('HackathonCtrls', ['HackathonServices'])
       )
     }
 
-    $rootScope.airport = {
-      origin: '',
-      destination: ''
-    };
+    $rootScope.airport = {};
 
-    $scope.search = function(weekly) {
-      $rootScope.airport = {
-        origin: $rootScope.airport.origin,
-        destination: $rootScope.airport.destination
-      };
-      console.log(weekly);
+    $scope.search = function(airport, weekly) {
+      console.log(airport);
       $http({
         method: 'POST',
-        url: 'http://localhost:3000/api/average',
-        data: $scope.master,
+        url: 'http://localhost:3000/api/deals',
+        data: airport,
       }).success(function(data){
         console.log(data);
         $rootScope.weekly = weekly;
@@ -123,8 +116,8 @@ angular.module('HackathonCtrls', ['HackathonServices'])
     )
   }])
   .controller('DealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
-    $scope.to = $rootScope.airport.origin;
-    $scope.from = $rootScope.airport.destination;
+    $scope.to = $scope.airport.origin;
+    $scope.from = $scope.airport.destination;
     $rootScope.bgimg = "deal_body";
     $scope.savedPerWeek = $scope.weekly;
     $scope.price = Math.floor($scope.average);

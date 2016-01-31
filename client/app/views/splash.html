@@ -12,9 +12,9 @@
   </div><!-- col end -->
 </div><!-- row end -->
 <div class="row center-row">
-  <div class="col-xs-2 col-sm-1 col-md-3">
+  <div class="col-sm-1 col-md-3">
   </div><!-- col end -->
-  <div class="col-xs-8 col-sm-10 col-md-6" ng-controller="HomeCtrl">
+  <div class="col-xs-12 col-sm-10 col-md-6" ng-controller="HomeCtrl">
     <div class="pill-tabs">
       <uib-tabset type="pills">
         <uib-tab class="tab-heading" heading="Set Amount">
@@ -27,9 +27,12 @@
                   <div class="input-group-addon">/wk</div>
                 </div>
               </div>
-              <div class="savings_per_year">
-                <p>${{weekly * 52}}</p>
-                Savings per year
+              <div class="row">
+                <div class="text-center imgContainer imgContainer4 col-md-5">
+                  $<span>{{weekly * 52}}</span>
+                <p>Savings per year</p>
+                </div>
+
               </div>
               <div>
                 <h4>Flying From:</h4>
@@ -37,7 +40,7 @@
                 <h4>Flying To:</h4>
                 <input type="text" placeholder="city or airport" class="form-control" ng-model="airport.destination">
               </div>
-              <button type="submit" class="btn btn-default" ng-click="search(weekly)">Search</button>
+              <button type="submit" class="btn btn-default" ng-click="search(airport, weekly)">Search</button>
             </form>
           </div>
         </uib-tab>
@@ -45,40 +48,45 @@
           <div class="user-input">
             <form class="form-inline">
               <div class="form-group">
+
                 <div id="monthly_income" class="input-group">
                   <div class="input-group-addon">$</div>
                   <input id="monthly_income_amount" type="number" class="form-control text-right"  placeholder="Income" ng-model="income" min="0">
                 </div>
-                <div id="income_percentage" class="input-group">
+                <br>
+                <div id="income_percentage" class="input-group spacer">
                   <input type="number" class="form-control text-right" placeholder="0" max="100" min="0" ng-model="percentage">
                   <span class="input-group-addon">%</span>
                 </div>
+
               </div>
+              <br><br>
               <div class="savings_per_week">
-                <p>${{(percentage * 0.01) * (income / 2)}}/week</p>
+                ${{(percentage * 0.01) * (income / 2)}}/week
               </div>
-              <div class="savings_per_year">
-                <p>${{((percentage * 0.01) * (income /2)) * 52}}</p>
-                Savings per year
+              <div class="row">
+                <div class="text-center imgContainer imgContainer4 col-md-5">
+                  $<span>{{((percentage * 0.01) * (income /2)) * 52}}</span>
+                  <p>Savings per year</p>
+                </div>
               </div>
               <div>
                 <h4>Flying From:</h4>
                 <input type="text" placeholder="city or airport" class="form-control">
-                <h4>Flying From:</h4>
+                <h4>Flying To:</h4>
                 <input type="text" placeholder="city or airport" class="form-control">
               </div>
-              <button type="submit" class="btn btn-default">Search</button>
+              <button type="submit" class="spacer btn btn_default">Search</button>
             </form>
           </div>
         </uib-tab>
       </uib-tabset>
     </div>
   </div><!-- col end -->
-  <div class="col-xs-2 col-sm-1 col-md-3">
+  <div class="col-sm-1 col-md-3">
   </div><!-- col end -->
 </div><!-- row end -->
 <div class="row">
 
 </div><!-- row end -->
-</div>
 </div>
