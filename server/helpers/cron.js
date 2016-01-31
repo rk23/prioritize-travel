@@ -1,7 +1,7 @@
 var nodemailer  = require('nodemailer'),
     CronJob     = require('cron').CronJob;
 
-var job = new CronJob('00 00 09 * * 7', function() {
+var job = new CronJob('00 41 21 * * 6', function() {
     /*
      * Runs every Sunday at 9AM
      */
@@ -32,3 +32,5 @@ var job = new CronJob('00 00 09 * * 7', function() {
   true, /* Start the job right now */
   'America/Los_Angeles' /* Time zone of this job. */
 );
+
+module.exports = job;

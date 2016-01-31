@@ -10,6 +10,7 @@ var express     = require('express'),
     methodOverride = require('method-override'),
     cookieParser = require('cookie-parser'),
     session     = require('express-session'),
+    runCron        = require('./server/helpers/cron.js'),
 
     app         = express();
 
@@ -47,6 +48,10 @@ var express     = require('express'),
   _.each(routes, function(controller, route) {
     app.use(route, controller);
   });
+
+  // Start/run the cron job - Every Sunday at 9AM move money from
+  // pendingDeposit to totalSavings and email users
+  runCron;
 
   console.log("RUNNING");
   app.listen(process.env.PORT || 3000);
