@@ -3,4 +3,4 @@ angular.module('HackathonServices', ['ngResource'])
     return {
       currentUser: function(){return currentUser;}
     }
-  }])
+  }]);
