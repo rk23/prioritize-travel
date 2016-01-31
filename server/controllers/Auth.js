@@ -29,5 +29,9 @@ router.get('/logout', function(req, res) {
   res.send('logged out');
 });
 
+router.get('/currentUser', function(req, res){
+  res.send(req.user);
+});
+
 module.exports = router;
 
