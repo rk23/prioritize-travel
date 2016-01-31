@@ -111,15 +111,41 @@ angular.module('HackathonCtrls', ['HackathonServices'])
   .controller('UserCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
     $rootScope.bgimg = "user_body";
 
-    $http.get('/auth/currentUser').then(
-      function success(res){
-        $scope.user = res.data;
-        console.log(res.data)
-      },
-      function error(){
-        console.log('userctrl error')
-      }
-    )
+      $http.get('/auth/currentUser').then(
+        function success(res) {
+            $scope.user = res.data;
+          if($scope.user) {
+            $scope.user.bank.savings = 0;
+          }
+        },
+        function error() {
+          console.log('userctrl error')
+        }
+      )
+
+    $scope.updateDaily = function(savings, user){
+      if (!savings) savings = 0;
+     $scope.user.bank.pendingDeposit += savings;
+      $http({
+        method: 'POST',
+        url: '/user/updateDaily',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        transformRequest: function(obj) {
+          var str = [];
+          for(var p in obj)
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          return str.join("&");
+        },
+        data: {savings: savings}
+      }).success(function (res) {
+        console.log('success updating daily')
+        console.log(res)
+      }).error(function (res) {
+        console.log(res);
+      });
+
+    }
+
   }])
   .controller('DealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
     $scope.to = $scope.airport.origin;

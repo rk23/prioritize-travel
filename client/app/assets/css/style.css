@@ -1,5 +1,5 @@
 .home_body {
-  background-image: url('../img/homepage_cropped1.jpg');
+  background-image: url('../img/bg_profile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -189,9 +189,10 @@ li{
 /*profile*/
 #profile {
 	background-color: rgba(0, 0, 0, .7);
-	margin: 0 auto;
-	border-radius: 20px;
-	padding: 50px 50px;
+	/*margin: 0 auto;*/
+	/*border-radius: 20px;*/
+	padding: 20px 50px;
+    width: 100%;
 }
 
 .stick_left {
