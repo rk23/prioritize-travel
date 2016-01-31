@@ -96,4 +96,19 @@ angular.module('HackathonCtrls', ['HackathonServices'])
         console.log('userctrl error')
       }
     )
+  }])
+  .controller('DealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $rootScope.bgimg = "user_body";
+    $scope.savedPerWeek = 40;
+    $scope.price = 2800;
+
+    console.log("moo");
+
+
+    var monthsNeeded = function(savedPerWeek, price){
+      console.log("moo2");
+      return price/savedPerWeek;
+    };
+
+
   }]);

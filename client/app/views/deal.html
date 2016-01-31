@@ -1,4 +1,24 @@
-<div class="container text-center" id="profile">
-	
-	<div class="row spacer"><a href="#/profile" class="btn btn_default">Let's Go!</a></div>
+<div class="row formBackground">
+	<div class="col-xs-2 col-md-3"></div>
+		<div class="text-center col-xs-8 col-md-6">
+			<div class="lg_text">
+				<span class="color2">SEA</span> &rarr; <span class="color3">LAX</span>
+				<p class="md_text">at</p>
+				<div class="imgContainer">
+					$<span>{{savedPerWeek}}</span><span class="md_text">/wk</span>
+					<h4>you will need</h4>
+				</div>
+				<div class="imgContainer2">
+					<span>{{ monthsNeeded(savedPerWeek, price) }}</span><span class="md_text">months</span>
+					<h4>to save</h4>
+				</div>
+				<div class="imgContainer3">
+					$<span>{{price}}</span>
+				</div>
+				
+				<p class="md_text">See where else you can go with your savings</p>
+				<div class="row spacer"><a href="#/deal" class="btn btn_default">Let's Go!</a></div>
+			</div>
+		</div>
+	<div class="col-xs-2 col-md-3"></div>
 </div>

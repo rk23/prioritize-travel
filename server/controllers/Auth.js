@@ -10,6 +10,11 @@ router.post('/register', function(req, res) {
     email : req.body.email,
     username : req.body.username,
     password : req.body.password,
+    bank: {
+      totalSavings: 0,
+      pendingDeposit: 0,
+      savingsGoal: 0
+    },
     firstName : req.body.firstName,
     lastName : req.body.lastName}),
     req.body.password, function(err, user) {
