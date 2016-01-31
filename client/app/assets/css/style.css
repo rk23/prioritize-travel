@@ -76,6 +76,11 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	color: #DEDEDE;
+	letter-spacing: 2px;
+}
+
+.inline {
+	display: inline-block;
 }
 
 .footer {
@@ -154,9 +159,43 @@ li{
 
 /*profile*/
 #profile {
-	width: 480px;
 	background-color: rgba(0, 0, 0, .7);
 	margin: 0 auto;
 	border-radius: 20px;
 	padding: 50px 50px;
+}
+
+.stick_left {
+	float: right;
+	z-index: -1;
+}
+
+.imgContainer {
+	background-image: url("../img/cloud.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 80px;
+	margin: 30px 0;
+	padding-top: 30px;
+}
+
+.imgContainer2 {
+	background-image: url("../img/banner.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 80px;
+	margin: 30px 0;
+	padding-top: 30px;
+}
+
+.imgContainer3 {
+	background-image: url("../img/suitcase.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 80px;
+	margin: 30px 0;
+	padding-top: 30px;
 }
