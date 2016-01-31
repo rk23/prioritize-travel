@@ -10,7 +10,7 @@
         <h4>Cost</h4>
       </div><!-- col end -->
       <div class="col-xs-3 text-center">
-        <h4>Savings</h4>
+        <h4>Savings /week</h4>
       </div><!-- col end -->
       <div class="col-xs-3 text-right">
         <h4>Time</h4>
@@ -18,19 +18,19 @@
   </div><!-- col end -->
   <!-- items -->
     <ul>
-      <li ng-repeat="item in popular" class="well">
+      <li ng-repeat="(key,val) in popular" class="well">
         <div class="row">
           <div class="col-xs-3 pop-destination">
-            {{item.destinationTLA}}
+            {{key}}
           </div>
           <div class="col-xs-3 pop-cost">
-            {{item.totalPackagePrice | currency: $ : 0}}
+            {{val | currency: $ : 0}}
           </div>
           <div class="col-xs-3 pop-weekly">
             {{weekly}}
           </div>
           <div class="col-xs-3 text-right pop-time">
-            {{item.totalPackagePrice / weekly}}
+            {{(val / weekly)/4 | number : 0}} /mo
           </div>
         </div>
       </li>

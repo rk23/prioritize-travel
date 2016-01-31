@@ -167,19 +167,18 @@ angular.module('HackathonCtrls', ['HackathonServices'])
       }
     };
 
-    $scope.popularSearch = function(origin, destination) {
+    $scope.popularSearch = function() {
       var checked_airport = {
-        origin: origin.toUpperCase(),
-        destination: destination.toUpperCase()
+        origin: "SEA",
       }
       console.log(checked_airport);
       $http({
-        url: 'http://localhost:3000/api/deals/',
+        url: 'http://localhost:3000/api/thing/',
         method: "POST",
         data: checked_airport,
       }).then(function success(data){
         $rootScope.weekly = $scope.savedPerWeek;
-        $rootScope.deals = data.data.unrealDeals;
+        $rootScope.deals = data.data.results;
         $location.path('/popular');
         console.log(data);
       }).then(function error(data){
@@ -190,7 +189,6 @@ angular.module('HackathonCtrls', ['HackathonServices'])
   }])
   .controller('PopularCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
     $rootScope.bgimg = "popular_body";
-
     $scope.popular = $rootScope.deals;
     $scope.savedPerWeek = $rootScope.weekly;
   }])
