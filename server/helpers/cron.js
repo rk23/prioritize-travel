@@ -19,7 +19,7 @@ var job = new CronJob('15 * * * * *', function() {
       var mailOptions = {
         from: 'Prioritize Travel <reed.kinning@gmail.com>', // sender address
         to: user.email, // list of receivers
-        subject: 'Your Weekly Savings', // Subject line
+        subject: 'Your Weekly Savings - ' + user.bank.pendingDeposit, // Subject line
         text: '- ' + user.bank.pendingDeposit, // plaintext body
         html: '<p>Hi ' + user.firstName + ', <br><br>Here\'s your weekly savings report from <b>Prioritize' +
           ' Travel</b>.<h2>Savings this week: <span style="font-weight: 100">$' + user.bank.pendingDeposit + '.00</span><h2><h3>Total' +

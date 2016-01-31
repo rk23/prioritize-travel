@@ -277,9 +277,8 @@ li{
 
 .imgContainer4 {
 	background-image: url("../img/bar-gradient.png");
-	height: 50px;
-  vertical-align: text-bottom;
-  display: inline-block;
+	height: 40px;
+	padding-bottom: 40px;
 }
 
 .interior-well {
