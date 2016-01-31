@@ -30,6 +30,7 @@
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 10px;
+  margin-top: 8px;
 }
 
 .center-row {
@@ -38,22 +39,46 @@
 }
 
 .quote {
-  color: rgb(91, 91, 91);
+  /*color: rgb(91, 91, 91);*/
+  color: #801515;
+  /*color: white;*/
+  /*color: #B6ABAB;*/
   margin-top: 0;
   margin-bottom: 15px;
+  /*text-shadow: 1px 1px #B6ABAB;*/
+}
+
+.quoteBg {
+  /*background-color: rgba(255, 255, 255, .5);*/
 }
 
 .tab-heading {
   margin-bottom: 10px;
 }
 
-.pill-tabs {
+/*.pill-tabs {
   display: inline;
   width: 100%;
+}*/
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
 }
 
 .savings_per_year {
   color: rgb(255, 255, 255);
+}
+
+.savings_per_week {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-align: center;
 }
 
 #monthly_income_amount {
@@ -73,6 +98,13 @@
 .form-control {
   width: 100% !important;
 }
+
+#monthly_income {
+
+
+}
+
+
 
 .class {
   display: inline !important;
@@ -236,5 +268,11 @@ li{
 
 .imgContainer4 {
 	background-image: url("../img/bar-gradient.png");
-	height: 50px;
+	height: 40px;
+  padding-bottom: 40px;
+  /*margin-bottom: 30px;*/
+}
+
+.savingsPerYearNum {
+  font-size: 30px;
 }
