@@ -3,8 +3,12 @@
     <h3>Your Account</h3>
 		<div class="text-left col-md-6 col-xs-6">
       <p class="subtitle spacer color4">How much did you save today?</p>
-      Add money not spent today: <input type="text" placeholder="Amount" class="form-control"><p class="spacer"><a
-        href="#/profile" class="btn btn-sm btn_default">Add to savings</a></p>
+      <form novalidate>
+        Add money not spent today: <input type="number" placeholder="Amount" class="form-control" ng-model="savings">
+        <br>
+        <input type="submit" ng-click="updateDaily(savings, user)" class="btn btn-sm btn_default" value="Save!">
+      </form>
+
 
       <p class="subtitle spacer color1">Recurring Savings</p>
       Add recurring transfer: <input type="text" placeholder="Amount" class="form-control"><p class="spacer"><a
