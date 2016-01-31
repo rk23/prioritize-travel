@@ -1,7 +1,20 @@
 <div class="container text-center" id="profile">
 	<div class="row">
-    <h3>Your Account</h3>
-		<div class="text-left col-md-6 col-xs-6">
+		<div class="text-left col-md-8 col-xs-8">
+        <h3>Your Account</h3>
+		</div>
+    <div class="text-center col-md-4 col-xs-4">
+      <p class="subtitle spacer color2">Total Savings:
+        <span ng-model="user.bank.totalSavings" style="color:white">${{user.bank.totalSavings}}.00</span>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+      <p class="subtitle spacer color3">This Week's Savings</p>
+      <p><span class="lg_text" ng-model="user.bank.pendingDeposit">${{user.bank.pendingDeposit}}</span>/wk</p>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
       <p class="subtitle spacer color4">How much did you save today?</p>
       <form novalidate>
         Add money not spent today: <input type="number" placeholder="Amount" class="form-control" ng-model="savings">
@@ -13,16 +26,8 @@
       <p class="subtitle spacer color1">Recurring Savings</p>
       Add recurring transfer: <input type="text" placeholder="Amount" class="form-control"><p class="spacer"><a
         href="#/" class="btn btn-sm btn_default">Add to savings</a></p>
-		</div>
-		<div class="col-md-6 col-xs-6">
-			<p class="subtitle spacer color2">Total Savings</p>
-			<p class="lg_text" ng-model="user.bank.totalSavings">${{user.bank.totalSavings}}.00</p>
-			<p class="subtitle spacer color3">This Week's Savings</p>
-			<p><span class="lg_text" ng-model="user.bank.pendingDeposit">${{user.bank.pendingDeposit}}</span>/wk</p>
-		</div>
-		<div>
 
-		</div>
+    </div>
 	</div>
 	<!--<div class="row spacer"><a href="#/profile" class="btn btn_default">Logout</a></div>-->
 </div>
