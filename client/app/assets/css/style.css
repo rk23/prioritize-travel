@@ -57,13 +57,32 @@
 }
 
 #monthly_income_amount {
-  width: 100px;
-
+  float: left !important;
+  display: inline-flex ;
 }
 
 #income_percentage {
-  width: 100px;
+  float: left !important;
+  display: inline-flex ;
 }
+
+.form-inline {
+  width: 100% !important;
+}
+
+.form-control {
+  width: 100% !important;
+}
+
+.form-group {
+  display: inline !important;
+  width: 100% !important;
+}
+
+/*.input-group {
+  float: left !important;
+  display: inline-flex ;
+}*/
 
 .pagination {
   list-style-type: none;
