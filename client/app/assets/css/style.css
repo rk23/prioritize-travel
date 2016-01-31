@@ -8,7 +8,7 @@
 }
 
 .user_body {
-  background-image: url('../img/bg_profile.jpg');
+  background-image: url('../img/travel_photo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -17,7 +17,7 @@
 }
 
 .deal_body {
-  background-image: url('../img/deals_bg.jpg');
+  background-image: url('../img/luggage_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -74,15 +74,10 @@
   width: 100% !important;
 }
 
-.form-group {
+.class {
   display: inline !important;
   width: 100% !important;
 }
-
-/*.input-group {
-  float: left !important;
-  display: inline-flex ;
-}*/
 
 .pagination {
   list-style-type: none;
@@ -217,7 +212,8 @@ li{
 
 .imgContainer2 {
 	background-image: url("../img/banner.png");
-
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .imgContainer3 {
