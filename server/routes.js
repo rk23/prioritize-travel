@@ -5,7 +5,7 @@ module.exports = {
   '/calc' : require('./controllers/CalculatorCtrl'),
   '/user' : require('./controllers/UserCtrl'),
   '/auth' : require('./controllers/Auth'),
-  '/test'  : require('./controllers/HomeCtrl'),
+  '/api'  : require('./controllers/HomeCtrl'),
 
   '/' : function(req, res){
     res.sendFile(path.join(__dirname, '../client/index.html'));

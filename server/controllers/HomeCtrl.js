@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var helper = require('../helpers/expediaApiHelper');
 
-router.post('/test', function(req, res){
+router.post('/deals', function(req, res){
   var origin = req.body.origin;
   var destination = req.body.destination;
   helper.unrealDeals(origin, destination, function(unrealDeals){
@@ -11,6 +11,8 @@ router.post('/test', function(req, res){
 });
 
 router.post('/average', function (req, res) {
+  var origin = req.body.origin;
+  var destination = req.body.destination;
 
   helper.averagePriceUnreal('SEA', 'LAS', function(average){
     console.log(average);
