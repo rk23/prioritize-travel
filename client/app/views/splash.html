@@ -23,7 +23,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-addon">$</div>
-                  <input type="number" class="form-control text-right" id="weekly_income" placeholder="0" min="0" ng-model="weekly">
+                  <input type="number" class="form-control text-right" id="weekly_income" placeholder="0" min="0" autofocus ng-model="weekly">
                   <div class="input-group-addon">/wk</div>
                 </div>
               </div>
@@ -46,12 +46,12 @@
         </uib-tab>
         <uib-tab heading="Percentage">
           <div class="user-input">
-            <form class="form-inline">
+            <form class="form-inline" novalidate>
               <div class="form-group">
 
                 <div id="monthly_income" class="input-group">
                   <div class="input-group-addon">$</div>
-                  <input id="monthly_income_amount" type="number" class="form-control text-right"  placeholder="Income" ng-model="income" min="0">
+                  <input id="monthly_income_amount" type="number" class="form-control text-right" placeholder="Income" min="0" ng-model="income">
                 </div>
                 <br>
                 <div id="income_percentage" class="input-group spacer">
@@ -72,11 +72,11 @@
               </div>
               <div>
                 <h4>Flying From:</h4>
-                <input type="text" placeholder="city or airport" class="form-control">
+                <input type="text" placeholder="city or airport" class="form-control" ng-model="airport.origin">
                 <h4>Flying To:</h4>
-                <input type="text" placeholder="city or airport" class="form-control">
+                <input type="text" placeholder="city or airport" class="form-control" ng-model="airport.destination">
               </div>
-              <button type="submit" class="spacer btn btn_default">Search</button>
+              <button type="submit" class="spacer btn btn_default" ng-click="search(airport, (percentage * 0.01) * (income / 2))">Search</button>
             </form>
           </div>
         </uib-tab>

@@ -5,8 +5,8 @@ angular.module('HackathonCtrls', ['HackathonServices'])
   .controller('HomeCtrl', ['$scope', '$rootScope', '$location', '$http', '$routeParams', function($scope, $rootScope, $location, $http, $routeParams) {
     $rootScope.bgimg = "home_body";
     $rootScope.weekly;
-    $scope.income = 0;
-    $scope.percentage = 0;
+    $scope.income;
+    $scope.percentage;
 
     $rootScope.isLoggedIn = false;
 
@@ -24,15 +24,15 @@ angular.module('HackathonCtrls', ['HackathonServices'])
 
     $rootScope.airport = {};
 
-    $scope.search = function(airport, weekly) {
+    $scope.search = function(airport, amount) {
       console.log(airport);
       $http({
         method: 'POST',
-        url: 'http://localhost:3000/api/deals',
+        url: 'http://localhost:3000/api/average',
         data: airport,
       }).success(function(data){
         console.log(data);
-        $rootScope.weekly = weekly;
+        $rootScope.weekly = amount;;
         $rootScope.average = data.average;
         $location.path("/deal");
       }).error(function(data){

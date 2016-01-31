@@ -3,7 +3,4 @@ angular.module('HackathonServices', ['ngResource'])
     return {
       currentUser: function(){return currentUser;}
     }
-  }])
-.factory('Average', ['$resource', function($resource){
-  return $resource('http://localhost:3000/api/average')
-}]);
+  }]);
