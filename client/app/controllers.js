@@ -42,7 +42,7 @@ angular.module('HackathonCtrls', ['HackathonServices'])
           $location.path("/");
         }
       }).then(function error(data){
-        console.log(data);
+
       });
     };
 
@@ -167,5 +167,56 @@ angular.module('HackathonCtrls', ['HackathonServices'])
       }
     };
 
+    $scope.popularSearch = function(origin, destination) {
+      var checked_airport = {
+        origin: origin.toUpperCase(),
+        destination: destination.toUpperCase()
+      }
+      console.log(checked_airport);
+      $http({
+        url: 'http://localhost:3000/api/deals/',
+        method: "POST",
+        data: checked_airport,
+      }).then(function success(data){
+        $rootScope.weekly = $scope.savedPerWeek;
+        $rootScope.deals = data.data.unrealDeals;
+        $location.path('/popular');
+        console.log(data);
+      }).then(function error(data){
+        console.log(data);
+      });
+    };
 
+  }])
+  .controller('PopularCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+    $rootScope.bgimg = "popular_body";
+
+    $scope.popular = $rootScope.deals;
+    $scope.savedPerWeek = $rootScope.weekly;
+  }])
+  .controller('UnrealCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
+
+    $scope.unrealSearch = function() {
+      var checked_airport = {
+        origin: 'SEA',
+        destination: 'LAX'
+      }
+      console.log(checked_airport);
+      $http({
+        url: 'http://localhost:3000/api/deals',
+        method: "POST",
+        data: checked_airport,
+      }).then(function success(data){
+        $rootScope.weekly = $scope.savedPerWeek;
+        $rootScope.unrealDeals = data.data.unrealDeals;
+        $scope.unreal = $rootScope.unrealDeals;
+        console.log($rootScope.unrealDeals);
+      }).then(function error(data){
+        console.log(data);
+      });
+    };
+
+    $rootScope.bgimg = "unreal_body";
+
+    $scope.savedPerWeek = $rootScope.weekly;
   }]);

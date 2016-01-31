@@ -25,11 +25,30 @@
   -o-background-size: cover;
 }
 
+.popular_body {
+  background-image: url('../img/travel_photo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.unreal_body {
+  background-image: url('../img/weird_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 .logo {
   height: 100px;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 10px;
+  margin-top: 8px;
 }
 
 .center-row {
@@ -38,22 +57,46 @@
 }
 
 .quote {
-  color: rgb(91, 91, 91);
+  /*color: rgb(91, 91, 91);*/
+  color: #801515;
+  /*color: white;*/
+  /*color: #B6ABAB;*/
   margin-top: 0;
   margin-bottom: 15px;
+  /*text-shadow: 1px 1px #B6ABAB;*/
+}
+
+.quoteBg {
+  /*background-color: rgba(255, 255, 255, .5);*/
 }
 
 .tab-heading {
   margin-bottom: 10px;
 }
 
-.pill-tabs {
+/*.pill-tabs {
   display: inline;
   width: 100%;
+}*/
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
 }
 
 .savings_per_year {
   color: rgb(255, 255, 255);
+}
+
+.savings_per_week {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-align: center;
 }
 
 #monthly_income_amount {
@@ -73,6 +116,13 @@
 .form-control {
   width: 100% !important;
 }
+
+#monthly_income {
+
+
+}
+
+
 
 .class {
   display: inline !important;
@@ -178,6 +228,10 @@ li{
 	font-size: 20px;
 }
 
+.vertical_text {
+  padding: 50px;
+}
+
 #profile .subtitle {
 	font-size: 20px;
 }
@@ -201,16 +255,23 @@ li{
 	/*margin: 0 auto;*/
 	/*border-radius: 20px;*/
 	padding: 20px 50px;
-    width: 100%;
+  width: 100%;
 }
-
-.stick_left {
-	float: right;
-	z-index: -1;
+.headerBox {
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 8px;
+  border-style: dashed;
+  color: white;
+  border: none #E86443 1px;
+  padding: 30px;
+  text-align: center;
+  vertical-align: middle;
+  width: 700px;
+  height: 100px;
+  margin: 0 auto;
 }
 
 .imgContainer {
-	/*background-image: url("../img/cloud.png");*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -226,8 +287,6 @@ li{
 
 .imgContainer2 {
 	background-image: url("../img/banner.png");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .imgContainer3 {
@@ -236,5 +295,67 @@ li{
 
 .imgContainer4 {
 	background-image: url("../img/bar-gradient.png");
-	height: 50px;
+	height: 40px;
+	padding-bottom: 40px;
+}
+
+.mid-row {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pop-destination {
+  color: rgb(80, 170, 235);
+  font-size: 22px;
+}
+
+.pop-cost {
+  color: rgb(227, 130, 40);
+}
+
+.pop-weekly {
+  color: rgb(17, 172, 61);
+  font-size: 18px;
+}
+
+.pop-time {
+  color: rgb(92, 40, 79);
+  font-size: 18px;
+}
+
+.unreal-text {
+  color: rgb(7, 77, 96);
+}
+
+.interior-well {
+	margin: 10px;
+	color: black;
+	font-size: 14px;
+	height: 40px;
+  padding-bottom: 40px;
+  /*margin-bottom: 30px;*/
+}
+
+.savingsPerYearNum {
+  font-size: 30px;
+}
+.interior-well p {
+	margin-bottom: 0px;
+}
+
+#daily-options {
+	height: 250px;
+	overflow: scroll;
+}
+
+#daily-options .btn {
+	padding: 2px 12px;
+	width: 75px;
+}
+
+#daily-options p {
+	padding: 2px 0;
+}
+
+#daily-options i {
+
 }

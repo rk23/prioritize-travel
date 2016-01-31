@@ -4,7 +4,7 @@
   </div><!-- col end -->
   <div class="col-xs-10 col-sm-10 col-md-8">
     <img src="app/assets/img/pt_logo.png" class="img-responsive logo pull-left">
-    <div class="text-center">
+    <div class="text-center quoteBg well well-lg">
       <h3 class="quote">Your travel buddy to help you save for your next adventure!</h3>
     </div>
   </div><!-- col end -->
@@ -21,28 +21,27 @@
           <div class="user-input">
             <form class="form-inline" role="form">
               <div class="form-group">
-                <div class="input-group">
+                <div class="input-group set_amount_input">
                   <div class="input-group-addon">$</div>
-                  <input type="number" class="form-control text-right" id="weekly_income" placeholder="0" min="1" autofocus autocomplete="off" ng-model="weekly">
+                  <input type="number" class="form-control" id="weekly_income" placeholder="0" min="1" autofocus autocomplete="off" ng-model="weekly">
                   <div class="input-group-addon">/wk</div>
                 </div>
               </div>
               <div class="row">
-                <div class="text-center imgContainer imgContainer4 col-md-5">
-                  $<span>{{weekly * 52 | number : 2}}</span>
+                <div class="text-center imgContainer imgContainer4 col-md-12">
+                  <span class="savingsPerYearNum">${{weekly * 52 | number : 2}}</span>
                 <p>Savings per year</p>
                 </div>
-
-              </div>
+              </div> <!-- close row with gradient bar -->
               <div>
                 <h4>Flying From:</h4>
-                <input type="text" placeholder="city or airport" class="form-control" ng-model="airport.origin">
+                <input type="text" placeholder="city or airport" class="city form-control" ng-model="airport.origin">
                 <h4>Flying To:</h4>
-                <input type="text" placeholder="city or airport" class="form-control" ng-model="airport.destination">
+                <input type="text" placeholder="city or airport" class="city form-control" ng-model="airport.destination">
               </div>
-              <button type="submit" class="btn btn-default" ng-click="search(airport, weekly)">Search</button>
+              <button type="submit" class="spacer btn btn_default" ng-click="search(airport, weekly)">Search</button>
             </form>
-          </div>
+          </div> <!-- closes div class userinput -->
         </uib-tab>
         <uib-tab heading="Percentage">
           <div class="user-input">
@@ -58,27 +57,27 @@
                 </div>
               </div>
               <br><br>
-              <div class="savings_per_week col-xs-8 col-xs-offset-2">
+              <div class="savings_per_week col-md-6 col-md-offset-3">
                 ${{(percentage * 0.01) * (income / 2) | number : 2}}/week
               </div>
               <div class="row">
-                <div class="text-center imgContainer imgContainer4 col-md-5">
-                  $<span>{{((percentage * 0.01) * (income /2)) * 52 | number : 2}}</span>
+                <div class="text-center imgContainer imgContainer4 col-md-12">
+                  <span class="savingsPerYearNum">${{((percentage * 0.01) * (income /2)) * 52 | number : 2}}</span>
                   <p>Savings per year</p>
                 </div>
-              </div>
+              </div> <!-- close gradient bar row -->
               <div>
                 <h4>Flying From:</h4>
-                <input type="text" placeholder="city or airport" class="city form-control col-md-12" ng-model="airport.origin">
+                <input type="text" placeholder="city or airport" class="city form-control" ng-model="airport.origin">
                 <h4>Flying To:</h4>
-                <input type="text" placeholder="city or airport" class="city form-control col-md-12" ng-model="airport.destination">
+                <input type="text" placeholder="city or airport" class="city form-control" ng-model="airport.destination">
               </div>
               <button type="submit" class="spacer btn btn_default" ng-click="search(airport, (percentage * 0.01) * (income / 2))">Search</button>
             </form>
           </div>
         </uib-tab>
       </uib-tabset>
-    </div>
+    </div> <!-- closes pill tabs div -->
   </div><!-- col end -->
   <div class="col-xs-0 col-sm-1 col-md-3 col-lg-3">
   </div><!-- col end -->

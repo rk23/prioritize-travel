@@ -26,10 +26,22 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'UserCtrl'
       }
     )
-      .when(
+    .when(
       '/deal', {
         templateUrl: 'app/views/deal.html',
         controller: 'DealCtrl'
+      }
+    )
+    .when(
+      '/popular', {
+        templateUrl: 'app/views/popular.html',
+        controller: 'PopularCtrl'
+      }
+    )
+    .when(
+      '/unreal', {
+        templateUrl: 'app/views/unreal.html',
+        controller: 'UnrealCtrl'
       }
     );
   // $locationProvider.html5Mode(true);
