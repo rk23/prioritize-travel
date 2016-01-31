@@ -23,6 +23,7 @@ var express     = require('express'),
   //Point to Angular Dir
   app.use(express.static(path.join(__dirname, 'client')));
   app.use(bodyParser.urlencoded({extended: true}));
+  app.use(bodyParser.json());
 
 
   //TODO: Do I need this?
