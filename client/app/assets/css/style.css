@@ -1,5 +1,5 @@
 .home_body {
-  background-image: url('../img/homepage_cropped.jpg');
+  background-image: url('../img/bg_profile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -8,7 +8,16 @@
 }
 
 .user_body {
-  background-image: url('../img/bg_profile.jpg');
+  background-image: url('../img/travel_photo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.deal_body {
+  background-image: url('../img/luggage_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -25,7 +34,7 @@
 
 .center-row {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 15px;
+  padding: 50px;
 }
 
 .quote {
@@ -39,7 +48,7 @@
 }
 
 .pill-tabs {
-  display: inline-block;
+  display: inline;
   width: 100%;
 }
 
@@ -47,12 +56,27 @@
   color: rgb(255, 255, 255);
 }
 
-#monthly_income {
-  width: 125px;
+#monthly_income_amount {
+  float: left !important;
+  display: inline-flex ;
 }
 
 #income_percentage {
-  width: 115px;
+  float: left !important;
+  display: inline-flex ;
+}
+
+.form-inline {
+  width: 100% !important;
+}
+
+.form-control {
+  width: 100% !important;
+}
+
+.class {
+  display: inline !important;
+  width: 100% !important;
 }
 
 .pagination {
@@ -127,7 +151,7 @@ li{
 }
 
 .spacer {
-	padding-top: 30px;
+	margin-top: 30px;
 }
 
 .btn_default {
@@ -174,9 +198,10 @@ li{
 /*profile*/
 #profile {
 	background-color: rgba(0, 0, 0, .7);
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	/*border-radius: 20px;*/
-	padding: 50px 50px;
+	padding: 20px 50px;
+    width: 100%;
 }
 
 .stick_left {
@@ -185,31 +210,31 @@ li{
 }
 
 .imgContainer {
-	background-image: url("../img/cloud.png");
+	/*background-image: url("../img/cloud.png");*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	height: 80px;
 	margin: 30px 0;
 	padding-top: 30px;
+}
+
+.imgContainer1 {
+	background-image: url("../img/cloud.png");
+
 }
 
 .imgContainer2 {
 	background-image: url("../img/banner.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	height: 80px;
-	margin: 30px 0;
-	padding-top: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .imgContainer3 {
 	background-image: url("../img/suitcase.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	height: 80px;
-	margin: 30px 0;
-	padding-top: 30px;
+}
+
+.imgContainer4 {
+	background-image: url("../img/bar-gradient.png");
+	height: 50px;
 }
