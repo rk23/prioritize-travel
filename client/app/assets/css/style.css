@@ -8,7 +8,7 @@
 }
 
 .user_body {
-  background-image: url('../img/bg_profile.jpg');
+  background-image: url('../img/travel_photo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -17,7 +17,7 @@
 }
 
 .deal_body {
-  background-image: url('../img/deals_bg.jpg');
+  background-image: url('../img/luggage_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -57,12 +57,26 @@
 }
 
 #monthly_income_amount {
-  width: 100px;
-
+  float: left !important;
+  display: inline-flex ;
 }
 
 #income_percentage {
-  width: 100px;
+  float: left !important;
+  display: inline-flex ;
+}
+
+.form-inline {
+  width: 100% !important;
+}
+
+.form-control {
+  width: 100% !important;
+}
+
+.class {
+  display: inline !important;
+  width: 100% !important;
 }
 
 .pagination {
@@ -198,7 +212,8 @@ li{
 
 .imgContainer2 {
 	background-image: url("../img/banner.png");
-
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .imgContainer3 {

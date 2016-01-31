@@ -25,16 +25,22 @@ angular.module('HackathonCtrls', ['HackathonServices'])
     $rootScope.airport = {};
 
     $scope.search = function(airport, amount) {
-      console.log(airport);
+      var checked_airport = {
+        origin: airport.origin.toUpperCase(),
+        destination: airport.destination.toUpperCase()
+      }
       $http({
         url: 'http://localhost:3000/api/average/',
         method: "POST",
-        data: airport,
+        data: checked_airport,
       }).then(function success(data){
-        console.log(data);
-        $rootScope.weekly = amount;;
-        $rootScope.average = data.data.average;
-        $location.path("/deal");
+        if (data.data.average) {
+          $rootScope.weekly = amount;
+          $rootScope.average = data.data.average;
+          $location.path("/deal");
+        } else {
+          $location.path("/");
+        }
       }).then(function error(data){
         console.log(data);
       });
