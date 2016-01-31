@@ -1,4 +1,4 @@
-var app = angular.module('PrioritizeTravel', ['ngRoute', 'HackathonCtrls', 'ui.bootstrap']);
+var app = angular.module('PrioritizeTravel', ['ngRoute', 'HackathonCtrls', 'HackathonServices', 'ui.bootstrap']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider

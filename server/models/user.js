@@ -10,7 +10,8 @@ var User = new Schema({
   password: {type: String, required: true},
   bank: {
     totalSavings: Number,
-    pendingDeposit: Number
+    pendingDeposit: Number,
+    savingsGoal: Number
   },
   created_at: Date,
   updated_at: Date
