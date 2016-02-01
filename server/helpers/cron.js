@@ -13,13 +13,13 @@ var job = new CronJob('15 * * * * *', function() {
       user.bank.totalSavings += user.bank.pendingDeposit;
 
       // create reusable transporter object using the default SMTP transport
-      var transporter = nodemailer.createTransport('smtps://reed.kinning%40gmail.com:rkinning23@smtp.gmail.com');
+      var transporter = nodemailer.createTransport('smtps://name%40gmail.com:pw@smtp.gmail.com');
 
 // setup e-mail data with unicode symbols
       var mailOptions = {
-        from: 'Prioritize Travel <reed.kinning@gmail.com>', // sender address
+        from: 'Name <name@gmail.com>', // sender address
         to: user.email, // list of receivers
-        subject: 'Your Weekly Savings - ' + user.bank.pendingDeposit, // Subject line
+        subject: 'Your Weekly Savings - $' + user.bank.pendingDeposit + '.00', // Subject line
         text: '- ' + user.bank.pendingDeposit, // plaintext body
         html: '<p>Hi ' + user.firstName + ', <br><br>Here\'s your weekly savings report from <b>Prioritize' +
           ' Travel</b>.<h2>Savings this week: <span style="font-weight: 100">$' + user.bank.pendingDeposit + '.00</span><h2><h3>Total' +
